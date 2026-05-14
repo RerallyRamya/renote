@@ -6,29 +6,19 @@ A FastAPI backend that lets users upload PDF/TXT documents and chat with them us
 
 ## Quick Start
 
-### Option 1 — Docker (recommended)
 
-```bash
-cp .env.example .env
-# Fill in your ANTHROPIC_API_KEY in .env
-docker-compose up --build
-```
-
-### Option 2 — Local Python
+### Local Python
 
 ```bash
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-export ANTHROPIC_API_KEY=AIzaSyBvZTHLqACKPDGQ1pGLP8pSA4ibQXxA3hk
-export SECRET_KEY=lalaLand
+export GROK_API_KEY=***APIKEY***
 
 uvicorn app.main:app --reload
 ```
 
-API is live at `http://localhost:8000`  
-Interactive docs: `http://localhost:8000/docs`
 
 ---
 
@@ -100,8 +90,7 @@ All protected endpoints require: `Authorization: Bearer <token>`
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `ANTHROPIC_API_KEY` | **required** | Your Anthropic API key |
-| `SECRET_KEY` | `change-me-in-production-please` | JWT signing secret |
+| `GROK_API_KEY` | **required** | Your Anthropic API key | | `change-me-in-production-please` | JWT signing secret |
 | `DB_PATH` | `renote.db` | SQLite database path |
 | `CHROMA_PATH` | `./chroma_store` | ChromaDB persistence directory |
 | `CHUNK_SIZE` | `500` | Words per chunk |
